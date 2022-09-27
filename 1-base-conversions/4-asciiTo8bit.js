@@ -7,7 +7,15 @@ const addZeros = require('../utils/addZeros');
 /******************************************************************************/
 
 const asciiTo8bit = str => {
-  // Your code here
+  let arr = str.split('');
+  let result = [];
+  arr.forEach(char => {
+    let code = char.charCodeAt();
+    let bin = code.toString(2);
+    let full = addZeros(bin, 8);
+    result.push(full);
+  })
+  return result.join('');
 };
 
 /******************************************************************************/
@@ -19,4 +27,5 @@ console.log(asciiTo8bit('ABC'));
 // 010000010100001001000011
 
 console.log(asciiTo8bit('Hello, world!'));
+// 01001000011001010110110001101100011011110010110000100000011101110110111101110010011011000110010000100001
 // 01001000011001010110110001101100011011110010110000100000011101110110111101110010011011000110010000100001

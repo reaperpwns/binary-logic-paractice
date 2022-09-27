@@ -3,7 +3,13 @@
 /******************************************************************************/
 
 const convertToBase10 = str => {
-  // Your code here
+  const oldStr = str.slice(2);
+  let oldBase;
+
+  if (str[1] === 'b') oldBase = 2;
+  else if (str[1] === 'x') oldBase = 16;
+
+  return Number.parseInt(oldStr, oldBase)
 };
 
 /******************************************************************************/
